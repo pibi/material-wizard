@@ -68,13 +68,11 @@ and then add the html part
  btn-progress-color: color of the  circular progress that will be showed in the step circle
  btn-bg-color: normal button progress color
  active-btn-bg-color: selected button progress color
- 
  ### mt-wz-step
  title: Title of the step that will be displayed in the top left of wizard
  step-img: An svg image that will displayed in the step circle
  step-fill: Percent of the circular progress that will be showed in the step circle
  onExit: function call on exit of the step, normally a form submit or server api call
- 
  ### step-fill-percent
  step-fill-percent: how much the circular progress should be increased
  step-index: mt-wz-step current index (starting with 0)
