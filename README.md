@@ -6,7 +6,9 @@ A demo can be found under http://plnkr.co/edit/rp5qJykW2DD1A7EvaVZP?p=preview
 
 # Dependencies
 material-wizard depends on Angular and angular material.
-
+# Installation
+## Bower 
+ bower install material-wizard --save
 # Usage
 
 First you need to add the module dependency 
