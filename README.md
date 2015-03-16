@@ -7,7 +7,7 @@ A demo can be found under http://plnkr.co/edit/rp5qJykW2DD1A7EvaVZP?p=preview
 # Dependencies
 material-wizard depends on Angular and angular material.
 # Installation
-## Bower 
+## Bower
  bower install material-wizard --save
 # Usage
 
@@ -68,14 +68,23 @@ and then add the html part
 ## Directive parameters:
 ### mt-wizard
  btn-progress-color: color of the  circular progress that will be showed in the step circle
+
  btn-bg-color: normal button progress color
+
  active-btn-bg-color: selected button progress color
+
  chevrons-always-visible: "true" if you want disable/enable the chevrons instead of hide/show them
+
 ### mt-wz-step
  title: Title of the step that will be displayed in the top left of wizard
+
  step-img: An svg image that will displayed in the step circle
+
  step-fill: Percent of the circular progress that will be showed in the step circle
+
  onExit: function call on exit of the step, normally a form submit or server api call
+
 ### step-fill-percent
  step-fill-percent: how much the circular progress should be increased
+
  step-index: mt-wz-step current index (starting with 0)
