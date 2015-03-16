@@ -9,11 +9,11 @@ material-wizard depends on Angular and angular material.
 
 # Usage
 
-First you need to add the module dependency 
+First you need to add the module dependency
 ````js
 angular.module( 'app', ['ngMaterial','material.wizard'] );
 ````
-and then add the html part 
+and then add the html part
 ```html
  <mt-wizard btn-progress-color="#D8D8D8"  btn-bg-color="#FAFAFA" active-btn-bg-color="#E9E9E9"  >
     <mt-wz-step title="Step 1" step-img="step1.svg"   >
@@ -59,7 +59,7 @@ and then add the html part
            </md-input-container>
           </form>
     </mt-wz-step>
- 
+
 
   </mt-wizard>
 ````
@@ -68,6 +68,7 @@ and then add the html part
  btn-progress-color: color of the  circular progress that will be showed in the step circle
  btn-bg-color: normal button progress color
  active-btn-bg-color: selected button progress color
+ chevrons-always-visible: "true" if you want disable/enable the chevrons instead of hide/show them
 ### mt-wz-step
  title: Title of the step that will be displayed in the top left of wizard
  step-img: An svg image that will displayed in the step circle

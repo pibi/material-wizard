@@ -16,7 +16,7 @@
    * @param {string@} btn-progress-color color of the  circular progress that will be showed in the step circle
    * @param {string@} btn-bg-color normal button progress color
    * @param {string@} active-btn-bg-color selected button progress color
-
+   * @param {string@} chevrons-always-visible "true" if you want disable/enable the chevrons instead of hide/show them
    * @usage
    * <hljs lang="html">
    *      <mt-wizard btn-progress-color="#D8D8D8"  btn-bg-color="#FAFAFA" active-btn-bg-color="#E9E9E9"  >
@@ -35,6 +35,7 @@
           inactiveBtnBgColor: '@',
           btnProgressColor: '@',
           activeBtnProgressColor: '@',
+          chevronsAlwaysVisible: '@',
           //Actions
           onFinish: '&'
 
@@ -83,7 +84,8 @@
             stepScope.wizardBtnStyle = {"background-color": active ? $scope.activeBtnBgColor : $scope.btnBgColor};
           }
         }],
-        template: function (scope, element, attributes) {
+        template: function (element,attrs) {
+          var chevronsStrategy = attrs.chevronsAlwaysVisible ? 'ng-disabled' : 'ng-hide';
           var template =
             '<div layout="column" class="md-whiteframe-z1" layout-padding>' +
             ' <div layout="row"  layout-sm="column" layout-align="space-between start" layout-margin>' +
@@ -102,9 +104,8 @@
             '<md-divider ></md-divider>' +
             ' <div layout="row"  class="wizard-container" ng-transclude ></div>' +
             ' <div layout="row" layout-align="end center" >' +
-            '  <md-button class="md-fab wizard-chevron-left" aria-label="previous" ng-click="previous()" ng-show="selectedIndex > 0 "></md-button>' +
-            '  <md-button class="md-fab wizard-chevron-right" aria-label="next" ng-click="next()"  ng-show="selectedIndex < steps.length -1"></md-button>' +
-            '  <md-button class="md-fab wizard-finish" aria-label="finish" ng-click="onFinish()"  ng-show="selectedIndex == steps.length -1"></md-button>' +
+            '  <md-button class="md-fab wizard-chevron-left" aria-label="previous" ng-click="previous()" '+chevronsStrategy+'="selectedIndex == 0 "></md-button>' +
+            '  <md-button class="md-fab" ng-class="{wizardchevronright:selectedIndex != steps.length -1 , wizardfinish:selectedIndex == steps.length -1}" aria-label="finish" ng-click="selectedIndex != steps.length -1 ? next(): onFinish()" ></md-button>' +
             ' </div>';
           '</div>';
           return template;
