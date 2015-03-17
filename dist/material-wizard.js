@@ -1,6 +1,6 @@
 /**
  * 
- * @version v0.0.2 - 2015-03-16 * @link 
+ * @version v0.0.2 - 2015-03-17 * @link 
  * @author Adel
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */(function() {
