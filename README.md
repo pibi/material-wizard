@@ -1,6 +1,6 @@
 # material-wizard
 material-wizard is an Angularjs wizard based on Angular Material inspired from angular wizard https://github.com/mgonto/angular-wizard
-Usually a form is  be defined inside this step. But a form can be defined for all the steps. use the on onExit on mt-wz-step and the onFinish on the mt-wizard to control the data or api call submitted the server
+Usually a form is  be defined inside this step. But one form can being defined for all the steps. use the on onExit on mt-wz-step and the onFinish on the mt-wizard to control the data or api call submitted the server
 
 A demo can be found under http://plnkr.co/edit/rp5qJykW2DD1A7EvaVZP?p=preview
 
