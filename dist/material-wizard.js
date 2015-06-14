@@ -1,6 +1,6 @@
 /**
- * 
- * @version v0.0.2 - 2015-03-17 * @link 
+ *
+ * @version v0.0.2 - 2015-03-17 * @link
  * @author Adel
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */(function() {
@@ -57,14 +57,15 @@
             stepsArray.push(stepScope);
             stepScope.progresscircleStyle = {"background-color": $scope.btnProgressColor};
             stepScope.wizardBtnStyle = {"background-color": $scope.btnBgColor};
-            if (steps.length == 1) {
+            if (steps.length === 1) {
               setStepActive(stepScope, true);
             }
           };
 
           $scope.next = function () {
-            steps[$scope.selectedIndex].onExit();
-            $scope.goto(Math.min($scope.selectedIndex + 1, steps.length - 1));
+            if (steps[$scope.selectedIndex].onExit()) {
+                $scope.goto(Math.min($scope.selectedIndex + 1, steps.length - 1));
+            }
           };
 
           $scope.previous = function () {
@@ -218,4 +219,3 @@
 
 
 })();
-
