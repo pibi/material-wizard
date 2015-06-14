@@ -70,7 +70,7 @@
 
 					$scope.next = function() {
                         var returnFunction;
-						if (!$scope.backExit){
+						if (!$scope.backExit || typeof steps[$scope.selectedIndex].onBackExit !== 'function'){
                             returnFunction = steps[$scope.selectedIndex].onExit();
                         }
                         else{
@@ -83,8 +83,7 @@
 					};
 
 					$scope.previous = function() {
-                        scope.backExit = true;
-                        console.log(scope.backExit);
+                        $scope.backExit = true;
 						$scope.goto(Math.max($scope.selectedIndex - 1, 0));
 					};
 
