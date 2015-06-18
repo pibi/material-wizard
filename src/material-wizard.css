@@ -23,10 +23,10 @@
 }
 
 .wizard-progress-linear{
-  width: 15px;margin-left: -2%; margin-right: -2%;
+  width: 15px !important;margin-left: -2%; margin-right: -2%;
 }
 .wizard-progress-linear > div{
-  height: 2px ! important;
+  height: 2px !important;
 }
 .circle-loader-wrap {
   position: absolute;
