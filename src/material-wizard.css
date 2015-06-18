@@ -10,9 +10,7 @@
   position: absolute;
 }
 .wizard-step-img{
-  position: absolute;
-  top: 26%;
-  left: 29%;
+  position: relative;
 }
 .wizard-step-img .icon{
   color: grey;
@@ -30,8 +28,8 @@
 }
 .circle-loader-wrap {
   position: absolute;
-  top: -3px;
-  left: -2px;
+  top: -2px;
+  left: -1px;
   width: 106%;
   height: 106%;
   background-color: rgb(178,235,242) ;
