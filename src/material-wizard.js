@@ -105,7 +105,7 @@
             ' <div layout="row"  class="wizard-container" ng-transclude ></div>' +
             ' <div layout="row" layout-align="end center" >' +
             '  <md-button class="md-fab wizard-chevron-left" aria-label="previous" ng-click="previous()" '+chevronsStrategy+'="selectedIndex == 0 "></md-button>' +
-            '  <md-button class="md-fab" ng-class="{wizardchevronright:selectedIndex != steps.length -1 , wizardfinish:selectedIndex == steps.length -1}" aria-label="finish" ng-click="selectedIndex != steps.length -1 ? next(): onFinish()" ></md-button>' +
+            '  <md-button class="md-fab" ng-class="{wizard-chevron-right:selectedIndex != steps.length -1 , wizard-finish:selectedIndex == steps.length -1}" aria-label="finish" ng-click="selectedIndex != steps.length -1 ? next(): onFinish()" ></md-button>' +
             ' </div>';
           '</div>';
           return template;
@@ -213,4 +213,3 @@
 
 
 })();
-
