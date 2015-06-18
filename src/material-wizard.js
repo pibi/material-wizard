@@ -88,26 +88,26 @@
           var chevronsStrategy = attrs.chevronsAlwaysVisible ? 'ng-disabled' : 'ng-hide';
           var template =
             '<div layout="column" class="md-whiteframe-z1" layout-padding>' +
-            ' <div layout="row"  layout-sm="column" layout-align="space-between start" layout-margin>' +
-            '  <div><h3>{{curentStepTitle}}</h3></div>' +
-            '  <div layout="row" layout-align="end center" layout-margin>' +
-            '  <div  ng-repeat="step in steps" layout="row" layout-align="center center"  ng-click="goto($index)" >' +
-            '   <md-button class="md-fab  wizard-button" aria-label="step button"  >' +
-            '     <div class="circle-loader-wrap" ng-style="step.progresscircleStyle"><div class="circle-loader-wrap after" ng-style="step.wizardBtnStyle" ></div></div>' +
-            '     <div class="wizard-step-img"><md-icon md-svg-src="{{step.stepImg}}" class="icon"></md-icon></div>' +
-            '     <md-progress-circular md-mode="determinate" md-diameter="63"  value="{{step.stepFill}}"></md-progress-circular>' +
-            '   </md-button>' +
-            '   <md-progress-linear md-mode="determinate" value="0" md-mode="buffer" md-buffer-value="100" class="md-primary wizard-progress-linear" ng-show="$index<steps.length-1"></md-progress-linear >' +
+            ' <div class="wizard-header" layout="row" layout-sm="column" layout-align="space-between start" layout-margin>' +
+            '  <div class="wizard-header-step-title"><h3>{{curentStepTitle}}</h3></div>' +
+            '  <div class="wizard-header-step-list" layout="row" layout-align="end center" layout-margin>' +
+            '   <div class="wizard-header-step" ng-repeat="step in steps" layout="row" layout-align="center center" ng-click="goto($index)">' +
+            '    <md-button class="md-fab wizard-button" aria-label="step button">' +
+            '      <div class="circle-loader-wrap" ng-style="step.progresscircleStyle"><div class="circle-loader-wrap after" ng-style="step.wizardBtnStyle"></div></div>' +
+            '      <div class="wizard-step-img"><md-icon md-svg-src="{{step.stepImg}}" class="icon"></md-icon></div>' +
+            '      <md-progress-circular md-mode="determinate" md-diameter="63" value="{{step.stepFill}}"></md-progress-circular>' +
+            '    </md-button>' +
+            '    <md-progress-linear md-mode="determinate" value="0" md-mode="buffer" md-buffer-value="100" class="md-primary wizard-progress-linear" ng-show="$index<steps.length-1"></md-progress-linear>' +
+            '   </div>' +
             '  </div>' +
-            '</div>' +
             ' </div>' +
-            '<md-divider ></md-divider>' +
-            ' <div layout="row"  class="wizard-container" ng-transclude ></div>' +
-            ' <div layout="row" layout-align="end center" >' +
-            '  <md-button class="md-fab wizard-chevron-left" aria-label="previous" ng-click="previous()" '+chevronsStrategy+'="selectedIndex == 0 "></md-button>' +
-            '  <md-button class="md-fab" ng-class="{wizardchevronright:selectedIndex != steps.length -1 , wizardfinish:selectedIndex == steps.length -1}" aria-label="finish" ng-click="selectedIndex != steps.length -1 ? next(): onFinish()" ></md-button>' +
-            ' </div>';
-          '</div>';
+            ' <md-divider></md-divider>' +
+            ' <div layout="row" class="wizard-container" ng-transclude></div>' +
+            ' <div class="wizard-paginator" layout="row" layout-align="end center">' +
+            '  <md-button class="md-fab wizard-chevron-left" aria-label="previous" ng-click="previous()" '+chevronsStrategy+'="selectedIndex == 0"></md-button>' +
+            '  <md-button class="md-fab {{ (selectedIndex == steps.length - (1)) ? \'wizard-finish\' : \'wizard-chevron-right\' }}" aria-label="finish" ng-click="(selectedIndex != steps.length - (1)) ? next(): onFinish()"></md-button>' +
+            ' </div>' +
+            '</div>';
           return template;
 
         },
@@ -213,4 +213,3 @@
 
 
 })();
-
