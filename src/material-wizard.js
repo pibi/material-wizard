@@ -58,8 +58,9 @@
           };
 
           $scope.next = function () {
-            steps[$scope.selectedIndex].onExit();
-            $scope.goto(Math.min($scope.selectedIndex + 1, steps.length - 1));
+            if(steps[$scope.selectedIndex].onExit() !== false) {
+              $scope.goto(Math.min($scope.selectedIndex + 1, steps.length - 1));
+            }
           };
 
           $scope.previous = function () {
@@ -68,9 +69,11 @@
 
           //Central function to select a step. All must go through it
           $scope.goto = function (stepNr) {
-            setStepActive(steps[$scope.selectedIndex], false);
-            $scope.selectedIndex = stepNr;
-            setStepActive(steps[stepNr], true);
+            if(steps[$scope.selectedIndex].onExit() !== false) {
+              setStepActive(steps[$scope.selectedIndex], false);
+              $scope.selectedIndex = stepNr;
+              setStepActive(steps[stepNr], true);
+            }
           };
 
 
