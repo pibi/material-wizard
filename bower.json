@@ -4,8 +4,8 @@
   "main": "dist/material-wizard.js",
   "version": "0.0.2",
   "dependencies": {
-    "angular": "~1.2",
-    "angular-material": "master"
+    "angular": "^1.6.4",
+    "angular-material": "^1.1.4"
   }
 }
 
